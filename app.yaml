@@ -1,0 +1,20 @@
+app:
+  name: fhir-alarm
+  log-level: info
+
+fhir:
+  server:
+    host: localhost:443
+    auth:
+      cert-location: /app/cert/app-cert.pem
+      key-location: /app/cert/app-key.pem
+    subscription-id:
+
+notification:
+  email:
+    recipients:
+    sender:
+    smtp:
+      server:
+      user:
+      password:
