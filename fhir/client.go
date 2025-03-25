@@ -15,7 +15,6 @@ import (
 
 type Client struct {
 	wsUrl          url.URL
-	conn           *websocket.Conn
 	tlsConfig      *tls.Config
 	subscriptionId string
 	emailClient    *notification.EmailClient
@@ -112,5 +111,4 @@ func closeConnection(c *websocket.Conn, done chan struct{}) {
 	case <-done:
 	case <-time.After(time.Second):
 	}
-	return
 }
