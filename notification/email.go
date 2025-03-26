@@ -51,12 +51,14 @@ func (c *EmailClient) Send(msg []byte) {
 	var out bytes.Buffer
 	if err := quick.Highlight(&out, msgf.String(), "json", "html", "monokailight"); err != nil {
 		slog.Error("Failed to highlight JSON", "error", err)
+		return
 	}
 
 	message.SetBodyString(mail.TypeTextHTML, out.String())
 
 	if err := c.client.DialAndSend(message); err != nil {
 		slog.Error("Failed to deliver E-Mail", "error", err)
+		return
 	}
 	slog.Info("E-Mail notification successfully delivered")
 }

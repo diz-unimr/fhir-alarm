@@ -72,6 +72,8 @@ func parseConfig(path string) (config *AppConfig, err error) {
 		return nil, err
 	}
 
+	parseSecretFiles()
+
 	err = viper.Unmarshal(&config)
 	return config, err
 }
@@ -89,4 +91,34 @@ func ConfigureLogger(c AppConfig) {
 	if err != nil {
 		slog.Error("Unable to set Log level from application properties", "level", c.App.LogLevel, "error", err)
 	}
+}
+
+func parseSecretFiles() {
+	keys := viper.AllKeys()
+	for _, key := range keys {
+
+		value := getSecretFromFile(key)
+		if value != nil {
+			viper.Set(strings.TrimSuffix(key, ".file"), value)
+		}
+	}
+}
+
+func getSecretFromFile(configKey string) *string {
+	if !strings.HasSuffix(configKey, ".file") {
+		configKey += ".file"
+	}
+	var valuePath = viper.GetString(configKey)
+	if valuePath == "" {
+		return nil
+	}
+
+	contents, err := os.ReadFile(valuePath)
+	if err == nil {
+		value := strings.Trim(string(contents), "\n")
+		return &value
+	}
+
+	slog.Error("Failed to read secrets file", "path", valuePath, "configKey", configKey, "error", err)
+	return nil
 }
