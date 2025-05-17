@@ -3,14 +3,14 @@ module fhir-alarm
 go 1.24
 
 require (
-	github.com/alecthomas/chroma/v2 v2.15.0
+	github.com/alecthomas/chroma/v2 v2.18.0
 	github.com/gorilla/websocket v1.5.3
-	github.com/spf13/viper v1.20.0
+	github.com/spf13/viper v1.20.1
 	github.com/wneessen/go-mail v0.6.2
 )
 
 require (
-	github.com/dlclark/regexp2 v1.11.4 // indirect
+	github.com/dlclark/regexp2 v1.11.5 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
