@@ -1,12 +1,12 @@
 module fhir-alarm
 
-go 1.24
+go 1.24.0
 
 require (
 	github.com/alecthomas/chroma/v2 v2.15.0
 	github.com/gorilla/websocket v1.5.3
 	github.com/spf13/viper v1.20.0
-	github.com/wneessen/go-mail v0.6.2
+	github.com/wneessen/go-mail v0.7.1
 )
 
 require (
@@ -23,6 +23,6 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.36.0 // indirect
 	golang.org/x/sys v0.31.0 // indirect
-	golang.org/x/text v0.23.0 // indirect
+	golang.org/x/text v0.29.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
