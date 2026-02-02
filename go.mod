@@ -2,13 +2,13 @@ module fhir-alarm
 
 go 1.24.0
 
-toolchain go1.24.1
+toolchain go1.25.6
 
 require (
 	github.com/alecthomas/chroma/v2 v2.23.1
 	github.com/gorilla/websocket v1.5.3
 	github.com/spf13/viper v1.21.0
-	github.com/wneessen/go-mail v0.7.1
+	github.com/wneessen/go-mail v0.7.2
 )
 
 require (
