@@ -1,18 +1,19 @@
 module fhir-alarm
 
-go 1.24.0
+go 1.25.0
 
-toolchain go1.25.6
+toolchain go1.27.1
 
 require (
-	github.com/alecthomas/chroma/v2 v2.23.1
+	github.com/alecthomas/chroma/v2 v2.27.0
 	github.com/gorilla/websocket v1.5.3
 	github.com/spf13/viper v1.21.0
-	github.com/wneessen/go-mail v0.7.2
+	github.com/wneessen/go-mail v0.8.1
 )
 
 require (
 	github.com/dlclark/regexp2 v1.11.5 // indirect
+	github.com/dlclark/regexp2/v2 v2.2.1 // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.4 // indirect
@@ -23,6 +24,7 @@ require (
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/sys v0.38.0 // indirect
-	golang.org/x/text v0.31.0 // indirect
+	golang.org/x/crypto v0.54.0 // indirect
+	golang.org/x/sys v0.47.0 // indirect
+	golang.org/x/text v0.40.0 // indirect
 )
